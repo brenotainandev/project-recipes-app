@@ -1,0 +1,24 @@
+body {
+  width: 360px !important;
+}
+
+.rec-total {
+  margin-bottom: 30px;
+  /* border: 1px solid rgb(0, 0, 0); */
+  display: flex;
+  justify-content: center;
+}
+
+.rec-separado {
+  width: 125px;
+  /* border: 1px solid rgb(158, 80, 80); */
+  padding: 5px;
+}
+
+.rec-separado img{
+  width: 110px;
+}
+
+.visually-hidden {
+  color: blue;
+}

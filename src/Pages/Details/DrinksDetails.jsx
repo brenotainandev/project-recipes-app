@@ -8,9 +8,10 @@ import shareIcon from '../../images/shareIcon.svg';
 import whiteHeartIcon from '../../images/whiteHeartIcon.svg';
 import Button from './buttons/Button';
 import './DrinksDetails.css';
+import RecomendadosDrinks from './RecomendadosDrinks';
 
 export default function DrinksDetails({ history }) {
-  const [recommended, setRecommended] = useState([]);
+  const [recommended, setRecommended] = useState('');
   const [copiedDrinkLink, setCopiedDrinkLink] = useState(false);
   const {
     drinksDetails,
@@ -34,6 +35,7 @@ export default function DrinksDetails({ history }) {
       const URL = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
       const retorno = await api(URL);
       setRecommended(retorno.meals.slice(0, NU));
+      console.log(recommended);
     })();
   }, []);
 
@@ -112,14 +114,23 @@ export default function DrinksDetails({ history }) {
           )) : null }
         </ul>
         <p data-testid="instructions">{strInstructions}</p>
-        <section>
+
+        <center><h4>Recomendados:</h4></center>
+        {
+          recommended
+          ? <RecomendadosDrinks imagem={ recommended } pagina='drinks'/>
+          : null
+        }
+
+        {/* <section>
           {recommended && recommended.map((atual, index) => (
             <div key={ index } data-testid={ `${index}-recomendation-card` }>
               <p data-testid={ `${index}-recomendation-title` }>{atual.strMeal}</p>
               <img src={ atual.strMealThumb } alt="Favoritar" />
             </div>
           ))}
-        </section>
+        </section> */}
+
         {/* {ingredients
           ? <Button id={ id } pagina="drinks" ingredients={ ingredients } />
           : null} */}
