@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import React, { useContext, useEffect, useState } from 'react';
-// import { Link } from 'react-router-dom';
 import context from '../../Context/Context';
 import favoritesDetails from '../../Functions/remove';
 import blackHeartIcon from '../../images/blackHeartIcon.svg';
@@ -8,6 +7,7 @@ import shareIcon from '../../images/shareIcon.svg';
 import whiteHeartIcon from '../../images/whiteHeartIcon.svg';
 import Button from './buttons/Button';
 import './FoodDetails.css';
+import RecomendadosFoods from './RecomendadosFoods';
 
 export default function FoodDetails({ history }) {
   const {
@@ -23,7 +23,7 @@ export default function FoodDetails({ history }) {
     copiedFoodLink,
   } = useContext(context);
 
-  const [drinkRecommended, setDrinkRecommended] = useState([]);
+  const [drinkRecommended, setDrinkRecommended] = useState('');
 
   // API para retornar as bebidas recomendadas
   useEffect(() => {
@@ -119,14 +119,18 @@ export default function FoodDetails({ history }) {
           allowFullScreen
         />
 
-        <section>
+        <center><h4>Recomendados:</h4></center>
+        <RecomendadosFoods imagem={ drinkRecommended } />
+
+        {/* <section>
           {drinkRecommended && drinkRecommended.map((atual, index) => (
             <div key={ index } data-testid={ `${index}-recomendation-card` }>
               <p data-testid={ `${index}-recomendation-title` }>{atual.strDrink}</p>
               <img src={ atual.strDrinkThumb } alt="Favoritar" />
             </div>
           ))}
-        </section>
+        </section> */}
+
         <Button id={ idMeal } pagina="foods" ingredients={ ingredients } />
       </div>);
   };
