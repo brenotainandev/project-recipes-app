@@ -3,6 +3,7 @@ import React, { useContext, useEffect } from 'react';
 import DrinkCard from '../../Components/DrinkCard';
 import Footer from '../../Components/Footer';
 import Header from '../../Components/Header';
+import SearchCard from '../../Components/SearchCard';
 import context from '../../Context/Context';
 
 const DRINK_API = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=';
@@ -23,7 +24,7 @@ function Drinks({ history }) {
           <DrinkCard cocktails={ drinkCard } />
         )
         : (
-          <p>Carregando...</p>
+          <SearchCard history={ history } />
         )}
       <Footer history={ history } />
     </>

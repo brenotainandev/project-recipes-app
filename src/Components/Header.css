@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
+
 .menu {
   background: rgb(219, 84, 84);
   display: flex;
@@ -34,4 +36,9 @@ header button {
 
 .menu-search-div {
   margin-bottom: 10px;
+}
+
+.menu-titulo {
+  margin-top: 5px;
+  font-family: 'Arvo', serif;
 }

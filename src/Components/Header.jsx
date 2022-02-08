@@ -28,7 +28,7 @@ function Header({ history, title, showSearchButton }) {
           <img src={ Profile } alt="Perfil" />
         </button>
       </Link>
-      <h1 data-testid="page-title">{ title }</h1>
+      <h1 className='menu-titulo' data-testid="page-title">{ title }</h1>
       {
         showSearchButton
           ? (
