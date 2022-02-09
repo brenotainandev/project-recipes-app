@@ -62,52 +62,57 @@ export default function DrinkCard({ cocktails }) {
           { drink.strCategory }
         </button>
       )) }
-      {
-        searchDrinkCategories.length > 1 && toggleSearchDrinkCat
-          ? (
-            searchDrinkCategories.slice(0, DRINK_MAX_RESULT).map((drink, index) => (
-              <Link key={ index } to={ `/drinks/${drink.idDrink}` }>
-                <div
-                  data-testid={ `${index}-recipe-card` }
-                  key={ index }
-                  role="button"
-                  onClick={ () => setDrinksDetails(drink) }
-                  tabIndex={ index }
-                  onKeyPress={ () => setDrinksDetails(drink) }
-                >
-                  <p data-testid={ `${index}-card-name` }>{ drink.strDrink }</p>
-                  <img
+
+      <div className="main-drink-card">
+        {
+          searchDrinkCategories.length > 1 && toggleSearchDrinkCat
+            ? (
+              searchDrinkCategories.slice(0, DRINK_MAX_RESULT).map((drink, index) => (
+                <Link key={ index } to={ `/drinks/${drink.idDrink}` }>
+                  <div
+                    className="drink-list"
+                    data-testid={ `${index}-recipe-card` }
                     key={ index }
-                    data-testid={ `${index}-card-img` }
-                    src={ drink.strDrinkThumb }
-                    alt={ drink.strDrink }
-                  />
-                </div>
-              </Link>
-            ))
-          )
-          : (
-            cocktails.slice(0, DRINK_MAX_RESULT).map((drink, index) => (
-              <Link key={ index } to={ `/drinks/${drink.idDrink}` }>
-                <div
-                  data-testid={ `${index}-recipe-card` }
-                  key={ index }
-                  role="button"
-                  onClick={ () => setDrinksDetails(drink) }
-                  tabIndex={ index }
-                  onKeyPress={ () => setDrinksDetails(drink) }
-                >
-                  <p data-testid={ `${index}-card-name` }>{ drink.strDrink }</p>
-                  <img
-                    data-testid={ `${index}-card-img` }
-                    src={ drink.strDrinkThumb }
-                    alt={ drink.strDrink }
-                  />
-                </div>
-              </Link>
-            ))
-          )
-      }
+                    role="button"
+                    onClick={ () => setDrinksDetails(drink) }
+                    tabIndex={ index }
+                    onKeyPress={ () => setDrinksDetails(drink) }
+                  >
+                    <p data-testid={ `${index}-card-name` }>{ drink.strDrink }</p>
+                    <img
+                      key={ index }
+                      data-testid={ `${index}-card-img` }
+                      src={ drink.strDrinkThumb }
+                      alt={ drink.strDrink }
+                    />
+                  </div>
+                </Link>
+              ))
+            )
+            : (
+              cocktails.slice(0, DRINK_MAX_RESULT).map((drink, index) => (
+                <Link key={ index } to={ `/drinks/${drink.idDrink}` }>
+                  <div
+                    className="drink-list"
+                    data-testid={ `${index}-recipe-card` }
+                    key={ index }
+                    role="button"
+                    onClick={ () => setDrinksDetails(drink) }
+                    tabIndex={ index }
+                    onKeyPress={ () => setDrinksDetails(drink) }
+                  >
+                    <p data-testid={ `${index}-card-name` }>{ drink.strDrink }</p>
+                    <img
+                      data-testid={ `${index}-card-img` }
+                      src={ drink.strDrinkThumb }
+                      alt={ drink.strDrink }
+                    />
+                  </div>
+                </Link>
+              ))
+            )
+        }
+      </div>
     </div>
   );
 }

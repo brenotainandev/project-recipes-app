@@ -1,0 +1,18 @@
+.main-drink-card {
+  padding: 30px 10px 30px 10px;
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(350px, 1fr));
+}
+
+.drink-list {
+  display: grid;
+  position: relative;
+  grid-template-rows: auto 1fr;
+  border-radius: 10px;
+}
+
+.drink-list > img {
+  display: grid;
+  width: 100%;
+  border-radius: 15px 15px 0 0;
+}

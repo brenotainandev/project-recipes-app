@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React, { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import context from '../Context/Context';
+import './FoodCard.css';
 
 const FOOD_CATEGORIES = 'https://www.themealdb.com/api/json/v1/1/list.php?c=list';
 const FOOD_MAX_RESULT = 12;
@@ -71,13 +72,15 @@ export default function FoodCard({ foods }) {
         </button>
       )) }
 
-      {/* tela dos itens */}
+      {/* tela dos itens */}      
 
+      <div className="main-food-card">
       { searchFoodCategories.length >= 1 && toggleSearchFoodCat && !procurado
         ? (
           searchFoodCategories.slice(0, FOOD_MAX_RESULT).map((food, index) => (
             <Link key={ index } to={ `/foods/${food.idMeal}` }>
               <div
+                className="food-list"
                 data-testid={ `${index}-recipe-card` }
                 key={ index }
                 role="button"
@@ -85,13 +88,13 @@ export default function FoodCard({ foods }) {
                 tabIndex={ index }
                 onKeyPress={ () => setFoodDetails(food) }
               >
-                <p data-testid={ `${index}-card-name` }>{ food.strMeal }</p>
                 <img
                   key={ index }
                   data-testid={ `${index}-card-img` }
                   src={ food.strMealThumb }
                   alt={ food.strMeal }
                 />
+                 <p data-testid={ `${index}-card-name` }>{ food.strMeal }</p>
               </div>
             </Link>
           ))
@@ -100,6 +103,7 @@ export default function FoodCard({ foods }) {
           foods.slice(0, FOOD_MAX_RESULT).map((food, index) => (
             <Link key={ index } to={ `/foods/${food.idMeal}` }>
               <div
+                className="food-list"
                 data-testid={ `${index}-recipe-card` }
                 key={ index }
                 role="button"
@@ -116,6 +120,7 @@ export default function FoodCard({ foods }) {
               </div>
             </Link>
           )))}
+      </div>
     </div>
   );
 }
