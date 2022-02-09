@@ -21,7 +21,9 @@ function Drinks({ history }) {
       <Header history={ history } title="Drinks" showSearchButton />
       { drinkCard.length > 1 && !procurado
         ? (
-          <DrinkCard cocktails={ drinkCard } />
+          <div className="drink-items">
+            <DrinkCard cocktails={ drinkCard } />
+          </div>
         )
         : (
           <SearchCard history={ history } />
