@@ -16,6 +16,7 @@ function SearchCard({ history }) {
           <Link to={ `/foods/${meal.idMeal}` } key={ meal.idMeal }>
             <div data-testid={ `${index}-recipe-card` }>
               <img
+              className='imagem'
                 src={ meal.strMealThumb }
                 alt={ meal.strMeal }
                 data-testid={ `${index}-card-img` }
@@ -32,6 +33,7 @@ function SearchCard({ history }) {
         <Link to={ `/drinks/${drink.idDrink}` } key={ drink.idDrink }>
           <div data-testid={ `${index}-recipe-card` }>
             <img
+              className='imagem'
               src={ drink.strDrinkThumb }
               alt={ drink.strDrink }
               data-testid={ `${index}-card-img` }

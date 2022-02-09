@@ -66,7 +66,7 @@ export default function DrinksDetails({ history }) {
     return (
       <div>
         <h2 data-testid="recipe-title">{strDrink}</h2>
-        <img src={ strDrinkThumb } alt={ strDrink } data-testid="recipe-photo" />
+        <img src={ strDrinkThumb } alt={ strDrink } className='imagem' data-testid="recipe-photo" />
         <button
           type="button"
           data-testid="share-btn"

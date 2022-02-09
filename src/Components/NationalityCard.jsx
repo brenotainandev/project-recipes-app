@@ -66,6 +66,7 @@ export default function NationalityCard({ foods }) {
               >
                 <p data-testid={ `${index}-card-name` }>{ food.strMeal }</p>
                 <img
+                className='imagem'
                   data-testid={ `${index}-card-img` }
                   src={ food.strMealThumb }
                   alt={ food.strMeal }
@@ -81,6 +82,7 @@ export default function NationalityCard({ foods }) {
             >
               <p data-testid={ `${index}-card-name` }>{ food.strMeal }</p>
               <img
+              className='imagem'
                 data-testid={ `${index}-card-img` }
                 src={ food.strMealThumb }
                 alt={ food.strMeal }

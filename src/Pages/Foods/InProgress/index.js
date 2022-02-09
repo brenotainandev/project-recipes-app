@@ -101,7 +101,7 @@ function InProgressFoods({ history }) {
             {/* Titulo e Categoria */}
             <h3 data-testid="recipe-title">{response.strMeal}</h3>
             <h5 data-testid="recipe-category">{response.strCategory}</h5>
-            <img src={ response.strMealThumb } alt="foto" data-testid="recipe-photo" />
+            <img className='imagem' src={ response.strMealThumb } alt="foto" data-testid="recipe-photo" />
             {/* Botão de compartilhar */}
             <button
               type="button"

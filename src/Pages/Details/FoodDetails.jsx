@@ -57,7 +57,7 @@ export default function FoodDetails({ history }) {
     return (
       <div>
         <h2 data-testid="recipe-title">{strMeal}</h2>
-        <img src={ strMealThumb } alt={ strMeal } data-testid="recipe-photo" />
+        <img src={ strMealThumb } alt={ strMeal } className='imagem' data-testid="recipe-photo" />
         <button
           type="button"
           data-testid="share-btn"

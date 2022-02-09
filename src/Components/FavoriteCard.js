@@ -21,6 +21,7 @@ export default function FavoriteCard({ index, favorite, handleUpdate }) {
     <div className="card">
       <Link to={ () => recipeLink(favorite.type, favorite.id) }>
         <img
+          className='imagem'
           src={ favorite.image }
           alt="share"
           data-testid={ `${index}-horizontal-image` }

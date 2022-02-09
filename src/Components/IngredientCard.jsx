@@ -33,6 +33,7 @@ export default function IngredientCard({ cocktails, foods }) {
               >
                 <p data-testid={ `${index}-card-name` }>{ drink.strIngredient1 }</p>
                 <img
+                className='imagem'
                   data-testid={ `${index}-card-img` }
                   src={
                     `https://www.thecocktaildb.com/images/ingredients/${drink.strIngredient1}-Small.png`
