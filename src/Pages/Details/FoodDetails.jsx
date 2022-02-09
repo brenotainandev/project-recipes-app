@@ -41,7 +41,6 @@ export default function FoodDetails({ history }) {
       strMealThumb,
       strInstructions,
       strCategory,
-      strVideo,
       idMeal,
     } = foodDetails;
 
@@ -107,7 +106,7 @@ export default function FoodDetails({ history }) {
 
         <p data-testid="instructions">{strInstructions}</p>
 
-        <iframe
+        {/* <iframe
           data-testid="video"
           width="560"
           height="315"
@@ -117,19 +116,10 @@ export default function FoodDetails({ history }) {
           allow="accelerometer;
           autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
-        />
+        /> */}
 
         <center><h4>Recomendados:</h4></center>
         <RecomendadosFoods imagem={ drinkRecommended } />
-
-        {/* <section>
-          {drinkRecommended && drinkRecommended.map((atual, index) => (
-            <div key={ index } data-testid={ `${index}-recomendation-card` }>
-              <p data-testid={ `${index}-recomendation-title` }>{atual.strDrink}</p>
-              <img src={ atual.strDrinkThumb } alt="Favoritar" />
-            </div>
-          ))}
-        </section> */}
 
         <Button id={ idMeal } pagina="foods" ingredients={ ingredients } />
       </div>);

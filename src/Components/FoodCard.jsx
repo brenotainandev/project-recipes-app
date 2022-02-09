@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 import context from '../Context/Context';
 import './FoodCard.css';
 
-const FOOD_CATEGORIES = 'https://www.themealdb.com/api/json/v1/1/list.php?c=list';
+const FOOD_CATEGORIES =
+  'https://www.themealdb.com/api/json/v1/1/list.php?c=list';
 const FOOD_MAX_RESULT = 12;
 const CATEGORIES_MAX_RESULT = 5;
 
@@ -54,72 +55,90 @@ export default function FoodCard({ foods }) {
 
   return (
     <div>
-      <button
-        type="button"
-        data-testid="All-category-filter"
-        onClick={ () => allCategories() }
-      >
-        All
-      </button>
-      { foodCategories.slice(0, CATEGORIES_MAX_RESULT).map((food, index) => (
+      <center className="btn-Card">
         <button
+          className="btn-tamanho"
           type="button"
-          key={ index }
-          data-testid={ `${food.strCategory}-category-filter` }
-          onClick={ () => searchCategories(food.strCategory) }
+          data-testid="All-category-filter"
+          onClick={() => allCategories()}
         >
-          { food.strCategory }
+          All
         </button>
-      )) }
+        {foodCategories.slice(0, CATEGORIES_MAX_RESULT).map((food, index) => (
+          <button
+            className="btn-tamanho"
+            type="button"
+            key={index}
+            data-testid={`${food.strCategory}-category-filter`}
+            onClick={() => searchCategories(food.strCategory)}
+          >
+            {food.strCategory}
+          </button>
+        ))}
+      </center>
 
-      {/* tela dos itens */}      
+      {/* tela dos itens */}
 
       <div className="main-food-card">
-      { searchFoodCategories.length >= 1 && toggleSearchFoodCat && !procurado
-        ? (
-          searchFoodCategories.slice(0, FOOD_MAX_RESULT).map((food, index) => (
-            <Link key={ index } to={ `/foods/${food.idMeal}` }>
-              <div
-                className="food-list"
-                data-testid={ `${index}-recipe-card` }
-                key={ index }
-                role="button"
-                onClick={ () => setFoodDetails(food) }
-                tabIndex={ index }
-                onKeyPress={ () => setFoodDetails(food) }
-              >
-                <img
-                  key={ index }
-                  data-testid={ `${index}-card-img` }
-                  src={ food.strMealThumb }
-                  alt={ food.strMeal }
-                />
-                 <p data-testid={ `${index}-card-name` }>{ food.strMeal }</p>
-              </div>
-            </Link>
-          ))
-        )
-        : (
-          foods.slice(0, FOOD_MAX_RESULT).map((food, index) => (
-            <Link key={ index } to={ `/foods/${food.idMeal}` }>
-              <div
-                className="food-list"
-                data-testid={ `${index}-recipe-card` }
-                key={ index }
-                role="button"
-                onClick={ () => setFoodDetails(food) }
-                onKeyPress={ () => setFoodDetails(food) }
-                tabIndex={ index }
-              >
-                <p data-testid={ `${index}-card-name` }>{ food.strMeal }</p>
-                <img
-                  data-testid={ `${index}-card-img` }
-                  src={ food.strMealThumb }
-                  alt={ food.strMeal }
-                />
-              </div>
-            </Link>
-          )))}
+        {searchFoodCategories.length >= 1 && toggleSearchFoodCat && !procurado
+          ? searchFoodCategories
+              .slice(0, FOOD_MAX_RESULT)
+              .map((food, index) => (
+                <Link key={index} to={`/foods/${food.idMeal}`}>
+                  <div
+                    className="drink-list row"
+                    data-testid={`${index}-recipe-card`}
+                    key={index}
+                    role="button"
+                    onClick={() => setFoodDetails(food)}
+                    tabIndex={index}
+                    onKeyPress={() => setFoodDetails(food)}
+                  >
+                    <div class="card">
+                      <div class="card-body">
+                        <img
+                          className='img-drinks'
+                          key={index}
+                          data-testid={`${index}-card-img`}
+                          src={food.strMealThumb}
+                          alt={food.strMeal}
+                        />
+                        <span data-testid={`${index}-card-name`} class="btn">
+                          {food.strMeal}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              ))
+          : foods.slice(0, FOOD_MAX_RESULT).map((food, index) => (
+              <Link key={index} to={`/foods/${food.idMeal}`}>
+                <div
+                  className="drink-list row"
+                  data-testid={`${index}-recipe-card`}
+                  key={index}
+                  role="button"
+                  onClick={() => setFoodDetails(food)}
+                  tabIndex={index}
+                  onKeyPress={() => setFoodDetails(food)}
+                >
+                  <div class="card">
+                    <div class="card-body">
+                      <img
+                        className='img-drinks'
+                        key={index}
+                        data-testid={`${index}-card-img`}
+                        src={food.strMealThumb}
+                        alt={food.strMeal}
+                      />
+                      <span data-testid={`${index}-card-name`} class="btn">
+                        {food.strMeal}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            ))}
       </div>
     </div>
   );

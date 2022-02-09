@@ -1,7 +1,3 @@
-/* body {
-  width: 360px !important;
-} */
-/* 
 .rec-total {
   margin-bottom: 30px;
   display: flex;
@@ -19,4 +15,8 @@
 
 .visually-hidden {
   color: blue;
-} */
+}
+
+.carousel {
+  margin-bottom: 30px;
+}

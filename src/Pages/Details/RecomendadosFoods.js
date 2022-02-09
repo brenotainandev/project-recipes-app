@@ -57,7 +57,6 @@ function RecomendadosFoods({ imagem }) {
             data-bs-target="#carouselExampleControls"
             data-bs-slide="prev"
           >
-            {/* <span class="carousel-control-prev-icon" aria-hidden="true"></span> */}
             <span class="visually-hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -80,7 +79,6 @@ function RecomendadosFoods({ imagem }) {
             data-bs-target="#carouselExampleControls"
             data-bs-slide="next"
           >
-            {/* <span class="carousel-control-next-icon" aria-hidden="true"></span> */}
             <span class="visually-hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

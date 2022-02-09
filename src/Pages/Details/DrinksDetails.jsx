@@ -121,19 +121,6 @@ export default function DrinksDetails({ history }) {
           ? <RecomendadosDrinks imagem={ recommended } pagina='drinks'/>
           : null
         }
-
-        {/* <section>
-          {recommended && recommended.map((atual, index) => (
-            <div key={ index } data-testid={ `${index}-recomendation-card` }>
-              <p data-testid={ `${index}-recomendation-title` }>{atual.strMeal}</p>
-              <img src={ atual.strMealThumb } alt="Favoritar" />
-            </div>
-          ))}
-        </section> */}
-
-        {/* {ingredients
-          ? <Button id={ id } pagina="drinks" ingredients={ ingredients } />
-          : null} */}
         <Button id={ id } pagina="drinks" ingredients={ ingredients } />
       </div>);
   };
