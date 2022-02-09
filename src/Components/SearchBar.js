@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { useContext, useState } from 'react';
 import context from '../Context/Context';
-import SearchCard from './SearchCard';
 
 function SearchBar({ title, searchInput, history }) {
   const FOOD_INGREDIENTS = `https://www.themealdb.com/api/json/v1/1/filter.php?i=${searchInput}`;
@@ -65,7 +64,7 @@ function SearchBar({ title, searchInput, history }) {
   };
   return (
     <form>
-      <div>
+      <div className='header-radio' >
         <label htmlFor="c1">
           <input
             type="radio"
@@ -75,6 +74,7 @@ function SearchBar({ title, searchInput, history }) {
             value="ingredient"
             onClick={ handleClick }
           />
+          {' '}
           Ingredient
         </label>
         <label htmlFor="c2">
@@ -87,6 +87,7 @@ function SearchBar({ title, searchInput, history }) {
             onClick={ handleClick }
 
           />
+          {' '}
           Name
         </label>
         <label htmlFor="c3">
@@ -99,18 +100,22 @@ function SearchBar({ title, searchInput, history }) {
             onClick={ handleClick }
 
           />
+          {' '}
           First Letter
         </label>
       </div>
-      <div>
-        <button
-          type="button"
-          data-testid="exec-search-btn"
-          onClick={ handleSearch }
-        >
-          Search
-        </button>
-        <SearchCard history={ history } />
+      <div className='menu-search-div'>
+        <center>
+          <button
+            type="button"
+            data-testid="exec-search-btn"
+            onClick={ handleSearch }
+            className='menu-search'
+          >
+            Search
+          </button>
+        </center>
+        {/* <SearchCard history={ history } /> */}
       </div>
     </form>
   );

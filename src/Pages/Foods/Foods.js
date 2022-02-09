@@ -3,12 +3,13 @@ import React, { useContext, useEffect } from 'react';
 import FoodCard from '../../Components/FoodCard';
 import Footer from '../../Components/Footer';
 import Header from '../../Components/Header';
+import SearchCard from '../../Components/SearchCard';
 import context from '../../Context/Context';
 
 const FOOD_API = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
 
 function Foods({ history }) {
-  const { foodCard, setFoodCard, api, procurado } = useContext(context);
+  const { foodCard, setFoodCard, api, procurado, searchInput } = useContext(context);
 
   useEffect(() => {
     (async () => {
@@ -26,7 +27,7 @@ function Foods({ history }) {
           </div>
         )
         : (
-          <p>Carregando...</p>
+          <SearchCard history={ history } />
         )}
       <Footer history={ history } />
     </div>

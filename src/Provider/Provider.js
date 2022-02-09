@@ -32,6 +32,7 @@ function Provider({ children }) {
   const [exFoodsNationalities, setExFoodsNationalities] = useState([]);
   const [selecionado, setSelecionado] = useState('');
   const [botao, setBotao] = useState(false);
+  const [title, setTitle] = useState('');
   const errorMessage = 'Sorry, we haven\'t found any recipes for these filters.';
 
   const handleData = (data) => {
@@ -110,6 +111,8 @@ function Provider({ children }) {
   };
 
   const contextValue = {
+    title,
+    setTitle,
     copyToClipboard,
     copiedFoodLink,
     setFoodCopiedLink,

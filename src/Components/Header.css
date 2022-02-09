@@ -1,4 +1,6 @@
-header {
+@import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
+
+.menu {
   background: rgb(219, 84, 84);
   display: flex;
   flex-direction: column;
@@ -14,4 +16,29 @@ header {
 header button {
   border: none;
   height: 40px;
+  background-color: transparent;
+}
+
+.header-radio {
+  display: flex;
+  justify-content: space-around;
+}
+
+.header-imput {
+  width: 90%;
+  border-radius: 10px;
+}
+
+.menu-search {
+  width: 90%;
+  border-radius: 10px;
+}
+
+.menu-search-div {
+  margin-bottom: 10px;
+}
+
+.menu-titulo {
+  margin-top: 5px;
+  font-family: 'Arvo', serif;
 }

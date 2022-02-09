@@ -28,10 +28,10 @@ function Login({ history }) {
     <div className="main-login">
       <section className="left-login">
         <div className="card-descrition">
-          <h1>
-            Faça o login
-            <br />
-            E aprenda a programar uma deliciosa receita :)
+          <h1 className='h1-login'>
+            <center>
+              Faça o login e aprenda a programar uma deliciosa receita
+            </center>
           </h1>
           {/* imagem retirada do site https://storyset.com/illustration/barbecue/amico */}
           <img src={ barbecue } alt="" className="img-login" />

@@ -28,7 +28,7 @@ function Header({ history, title, showSearchButton }) {
           <img src={ Profile } alt="Perfil" />
         </button>
       </Link>
-      <h1 data-testid="page-title">{ title }</h1>
+      <h1 className='menu-titulo' data-testid="page-title">{ title }</h1>
       {
         showSearchButton
           ? (
@@ -46,22 +46,25 @@ function Header({ history, title, showSearchButton }) {
           )
       }
     </div>
-
   );
+  
   return (
-    <>
+    <div className='menu'>
       <header>
         {headerUp()}
         {showInput && showSearchButton
           ? (
             <>
               <br />
-              <input
-                type="search"
-                data-testid="search-input"
-                onChange={ ({ target }) => setSearchInput(target.value) }
-                value={ searchInput }
-              />
+              <center>
+                <input
+                  className='header-imput'
+                  type="search"
+                  data-testid="search-input"
+                  onChange={ ({ target }) => setSearchInput(target.value) }
+                  value={ searchInput }
+                />
+              </center>
             </>
           )
           : (
@@ -79,7 +82,7 @@ function Header({ history, title, showSearchButton }) {
           )
       }
 
-    </>
+</div>
   );
 }
 
