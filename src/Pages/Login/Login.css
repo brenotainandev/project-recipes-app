@@ -88,13 +88,21 @@ body * {
   width: 90%;
 }
 
+.btn-login-off {
+  background: rgba(255, 254, 254, 0.534);
+  cursor: default;
+}
+
 .btn-login {
   background: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+.bntTwo {
   border-radius: 8px;
   border: none;
   box-shadow: 0 10px 40px -12px rgba(255, 255, 255, 0.247);
   color: rgb(221, 78, 78);
-  cursor: pointer;
   font-weight: 800;
   letter-spacing: 3px;
   margin: 25px;

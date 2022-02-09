@@ -64,7 +64,7 @@ function Login({ history }) {
             />
           </label>
           <button
-            className="btn-login"
+            className={btnCheck() ? "btn-login-off bntTwo" : "btn-login bntTwo"}
             type="button"
             data-testid="login-submit-btn"
             disabled={ btnCheck() }
